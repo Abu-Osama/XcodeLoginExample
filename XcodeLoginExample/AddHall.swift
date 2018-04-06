@@ -18,6 +18,9 @@ class AddHall :UIViewController,UIImagePickerControllerDelegate,UINavigationCont
     // @IBOutlet weak var hallcategory: UITextField!
     //@IBOutlet weak var hallcategory: UITextField!
     
+    var codcode:String = ""
+    var useremailid:String = ""
+    
     @IBOutlet weak var hallcategory: UITextField!
     //@IBOutlet weak var hallcategory: UITextField!
     //@IBOutlet weak var dropDown: UIPickerView!
@@ -32,11 +35,12 @@ class AddHall :UIViewController,UIImagePickerControllerDelegate,UINavigationCont
     
   //  @IBOutlet weak var addimageview: UIImageView!
     
+    
    
     let list = ["MarriageHall","PartyHall","MeetingHall","conferenceHall","ExhibitionHall","EventHall"]
     
     
-    let URL_hall_details = "http://www.makemyhall.com/m/operator/op_add_hall.php"
+    let URL_hall_details = "https://www.makemyhall.com/m/operator/op_add_hall.php"
     
     @IBOutlet weak var hallname: UITextField!
     @IBOutlet weak var hallmanagername: UITextField!
@@ -53,6 +57,7 @@ class AddHall :UIViewController,UIImagePickerControllerDelegate,UINavigationCont
     @IBOutlet weak var cod: UITextField!
     
     @IBOutlet weak var optid: UITextField!
+
     
     
     
@@ -86,16 +91,10 @@ class AddHall :UIViewController,UIImagePickerControllerDelegate,UINavigationCont
     @IBAction func uploaddata(_ sender: Any) {
         
         
-   // }
-   // @IBAction func uploaddata(_ sender: Any) {
+       
         
-        
-   // }
-    
-  //  @IBAction func uploaddata(_ sender: UIButton) {
         
     
-        
         let parameters: Parameters=[
             "hall_name":hallname.text!,
             "manager_name":hallmanagername.text!,
@@ -242,6 +241,25 @@ class AddHall :UIViewController,UIImagePickerControllerDelegate,UINavigationCont
         
         //hallname.delegate = self
        // hallmanagername.delegate=self
+        
+
+        
+        let defaultValues = UserDefaults.standard
+        let codname = defaultValues.string(forKey: "cod")
+        let name = defaultValues.string(forKey: "email")
+        
+          codcode = codname!
+         useremailid = name!
+         cod.text = codcode
+         optid.text = useremailid
+        
+         print(codcode)
+        //print(optid)
+        
+       // print(name)
+        //print(cod)
+        
+        
         
         
         

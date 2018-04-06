@@ -14,7 +14,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     //The login script url make sure to write the ip instead of localhost
     //you can get the ip using ifconfig command in terminal
     
-     let URL_USER_LOGIN="http://www.makemyhall.com/m/operator/loginnew.php";
+     let URL_USER_LOGIN="https://www.makemyhall.com/m/operator/loginnew.php";
     
     //the defaultvalues to store user data
     let defaultValues = UserDefaults.standard
@@ -22,31 +22,32 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var labelUserName: UILabel!
     
     @IBOutlet weak var textFieldUserName: UITextField!
+    
     //the connected views
     @IBOutlet weak var textFieldPassword: UITextField!
+    
     //don't copy instead connect the views using assistant editor
   //  @IBOutlet weak var labelMessage: UILabel!
    // @IBOutlet weak var textFieldUserName: UITextField!
    // @IBOutlet weak var textFieldPassword: UITextField!
     
+    
     @IBAction func buttonLogin(_ sender: UIButton) {
     
-    //the button action function
-   // @IBAction func buttonLogin(_ sender: UIButton) {
-        
-        //getting the username and password
+  
         
         if CheckInternet.isConnectedToNetwork() == true {
             print("Connected to the internet")
             //  Do something
+            
+            if(!textFieldUserName.text!.isEmpty  && !textFieldPassword.text!.isEmpty)
+            {
+                
+                print(" items")
+            
         
-        
-        let parameters: Parameters=[
-            "email_id":textFieldUserName.text!,
-            "password":textFieldPassword.text!
-        ]
-        
-        
+let parameters: Parameters=["email_id":textFieldUserName.text!,
+                            "password":textFieldPassword.text!]
         //making a post request
         Alamofire.request(URL_USER_LOGIN, method: .post, parameters: parameters).responseJSON
             {
@@ -69,37 +70,27 @@ class ViewController: UIViewController,UITextFieldDelegate {
                         self.defaultValues.set(errorCode, forKey:"email")
                          self.defaultValues.set(cod, forKey:"cod")
                         
-                        
-                       // print(errorCode)
-                        
-                        //print(errorCode  ?? <#default value#>)
-                        //print(errorCode1 ?? <#default value#>)
-    
-//                        //getting user values
-//                        let userId = user.value(forKey: "id") as! Int
-//                        let userName = user.value(forKey: "username") as! String
-//                        let userEmail = user.value(forKey: "email") as! String
-//                        let userPhone = user.value(forKey: "phone") as! String
-//
-//                        //saving user values to defaults
-//                        self.defaultValues.set(userId, forKey: "userid")
-//                        self.defaultValues.set(userName, forKey: "username")
-//                        self.defaultValues.set(userEmail, forKey: "useremail")
-//                        self.defaultValues.set(userPhone, forKey: "userphone")
+                 
                         
                         //switching the screen
                         let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewcontroller") as! ProfileViewController
                         self.navigationController?.pushViewController(profileViewController, animated: true)
                         
                         self.dismiss(animated: false, completion: nil)
-                    }else{
-                        
-                        //self.showToast(message: "username password incorrect")
-                        //error message in case of invalid credential
+                    }
+                    else{
+                    
                         self.labelUserName.text = "Invalid username or password"
+                         print("error")
                     }
                 }
         }
+            }
+            else{
+                print("fill the data")
+                 self.showToast(message: "please fill the data")
+                
+            }
         }
         
         else {
@@ -168,7 +159,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
    //function for toast
     func showToast(message : String) {
         
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-550, width: 150, height: 40))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;

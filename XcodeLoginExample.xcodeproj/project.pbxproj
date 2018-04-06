@@ -15,6 +15,7 @@
 		1D9491661EDC7A060024DBAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9491641EDC7A060024DBAB /* LaunchScreen.storyboard */; };
 		1D9491711EDC7A060024DBAB /* XcodeLoginExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9491701EDC7A060024DBAB /* XcodeLoginExampleTests.swift */; };
 		1D94917C1EDC7A060024DBAB /* XcodeLoginExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94917B1EDC7A060024DBAB /* XcodeLoginExampleUITests.swift */; };
+		5B178A3220774A7200CC0691 /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B178A2920774A7200CC0691 /* drop.png */; };
 		5B265393203FF0FE0023CB86 /* AddHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B265392203FF0FE0023CB86 /* AddHall.swift */; };
 		5B45FDBA2060EE7100B78659 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B45FDB92060EE7100B78659 /* CheckInternet.swift */; };
 		5BF035042060CC6600840A1D /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BF035032060CC6500840A1D /* drop.png */; };
@@ -103,6 +104,7 @@
 		1D9491771EDC7A060024DBAB /* XcodeLoginExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeLoginExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D94917B1EDC7A060024DBAB /* XcodeLoginExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoginExampleUITests.swift; sourceTree = "<group>"; };
 		1D94917D1EDC7A060024DBAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B178A2920774A7200CC0691 /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drop.png; path = ../../ios/drop.png; sourceTree = "<group>"; };
 		5B265392203FF0FE0023CB86 /* AddHall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHall.swift; sourceTree = "<group>"; };
 		5B45FDB92060EE7100B78659 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		5BF035032060CC6500840A1D /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drop.png; path = ../../ios/drop.png; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				1D94915F1EDC7A060024DBAB /* Main.storyboard */,
 				5BF035032060CC6500840A1D /* drop.png */,
 				1D9491621EDC7A060024DBAB /* Assets.xcassets */,
+				5B178A2920774A7200CC0691 /* drop.png */,
 				1D9491641EDC7A060024DBAB /* LaunchScreen.storyboard */,
 				1D9491671EDC7A060024DBAB /* Info.plist */,
 				1D26E54A1EE061E8001C7F87 /* ProfileViewController.swift */,
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF035042060CC6600840A1D /* drop.png in Resources */,
+				5B178A3220774A7200CC0691 /* drop.png in Resources */,
 				1D9491661EDC7A060024DBAB /* LaunchScreen.storyboard in Resources */,
 				1D9491631EDC7A060024DBAB /* Assets.xcassets in Resources */,
 				1D9491611EDC7A060024DBAB /* Main.storyboard in Resources */,

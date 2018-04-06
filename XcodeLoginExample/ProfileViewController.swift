@@ -1,15 +1,15 @@
-//
+
 //  ProfileViewController.swift
 //  XcodeLoginExample
-//
 //  Created by deepak on 01/06/17.
 //  Copyright © 2017 deepak. All rights reserved.
-//
+
 
 import UIKit
 
 class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate 
  {
+    
     
 
     @IBOutlet weak var textBox: UITextField!
@@ -18,15 +18,24 @@ class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerView
     var list = ["Marriage Hall", "PartyHall", "meetinghall","ExhibitionHall","BanquetHall"]
     
 
+    @IBAction func addhall(_ sender: Any) {
+        
+        
+    }
+    
+    
+    @IBAction func addservices(_ sender: Any) {
+        
+//        let defaultValues = UserDefaults.standard
+//        let cod = defaultValues.string(forKey: "cod")
+//        print(cod)
+        
+    }
     //label again don't copy instead connect
     @IBOutlet weak var labelUserName: UILabel!
     
     @IBAction func buttonLogout(_ sender: UIButton) {
         
-        
-  //  }
-    //button
-  //  @IBAction func buttonLogout(_ sender: UIButton) {
         
         //removing values from default
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
@@ -47,6 +56,8 @@ class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerView
         
         //getting user data from defaults
         let defaultValues = UserDefaults.standard
+        let cod = defaultValues.string(forKey: "cod")
+        //print(cod)
         if let name = defaultValues.string(forKey: "email"){
             //setting the name to label 
             //labelUserName.text = name
@@ -54,6 +65,10 @@ class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerView
         }else{
             //send back to login view controller
         }
+        
+        // let errorCode = name["email"] as? String;
+        //self.defaultValues.set(errorCode, forKey:"email")
+        //self.defaultValues.set(cod, forKey:"cod")
         
     }
     

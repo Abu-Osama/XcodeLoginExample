@@ -1,10 +1,8 @@
 //
 //  ViewController.swift
 //  XcodeLoginExample
-//
 //  Created by deepak on 20/02/18.
 //  Copyright © 2017 deepak. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -34,19 +32,15 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func buttonLogin(_ sender: UIButton) {
     
-  
-        
         if CheckInternet.isConnectedToNetwork() == true {
             print("Connected to the internet")
             //  Do something
             
             if(!textFieldUserName.text!.isEmpty  && !textFieldPassword.text!.isEmpty)
             {
-                
                 print(" items")
             
-        
-let parameters: Parameters=["email_id":textFieldUserName.text!,
+        let parameters: Parameters=["email_id":textFieldUserName.text!,
                             "password":textFieldPassword.text!]
         //making a post request
         Alamofire.request(URL_USER_LOGIN, method: .post, parameters: parameters).responseJSON

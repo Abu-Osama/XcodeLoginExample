@@ -18,6 +18,9 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var addimageview: UIImageView!
    // @IBOutlet weak var addimageview: UIImageView!
     
+    var getcod = String()
+    var getemail = String()
+    
     @IBOutlet weak var hallcategory: UITextField!
     //@IBOutlet weak var hallcategory: UITextField!
     
@@ -36,9 +39,7 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
     
     let URL_hall_details = "https://www.makemyhall.com/m/operator/op_add_hall.php"
     
-    //@IBOutlet weak var hallcategory: UIView!
-    
-   // @IBOutlet weak var dropDown: UIPickerView!
+  
     
     @IBOutlet weak var dropDown: UIPickerView!
     @IBOutlet weak var hallname: UITextField!
@@ -58,48 +59,24 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var optid: UITextField!
     
     
-   // @IBOutlet weak var hallname: UITextField!
-    //@IBOutlet weak var hallmanagername: UITextField!
-   // @IBOutlet weak var hallphone: UITextField!
-   // @IBOutlet weak var emailid: UITextField!
-   // @IBOutlet weak var hallprice: UITextField!
-    //@IBOutlet weak var enterhalladd: UITextField!
-    //@IBOutlet weak var halldiscription: UITextField!
-    //@IBOutlet weak var halllocation: UITextField!
-    //@IBOutlet weak var accountname: UITextField!
-    //@IBOutlet weak var accountnumber: UITextField!
-   // @IBOutlet weak var ifsccode: UITextField!
-    //@IBOutlet weak var bankname: UITextField!
-    //@IBOutlet weak var cod: UITextField!
-    //@IBOutlet weak var optid: UITextField!
-    
-    
-    
-//        @IBOutlet weak var hallname: UITextField!
-//    @IBOutlet weak var hallmanagername: UITextField!
-//    @IBOutlet weak var hallphone: UITextField!
-//    @IBOutlet weak var emailid: UITextField!
-//    @IBOutlet weak var hallprice: UITextField!
-//    @IBOutlet weak var enterhalladd: UITextField!
-//    @IBOutlet weak var halldiscription: UITextField!
-//    @IBOutlet weak var halllocation: UITextField!
-//    @IBOutlet weak var accountname: UITextField!
-//    @IBOutlet weak var accountnumber: UITextField!
-//    @IBOutlet weak var ifsccode: UITextField!
-//    @IBOutlet weak var bankname: UITextField!
-//    @IBOutlet weak var cod: UITextField!
-//
-//    @IBOutlet weak var optid: UITextField!
-    
-    
+
     
     @IBAction func uploaddata(_ sender: Any) {
         
-        
-    //}
-    //    @IBAction func uploaddata(_ sender: Any) {
-//
-
+        if((hallname.text?.isEmpty)! || (hallmanagername.text?.isEmpty)! || (hallphone.text?.isEmpty)!
+            || (emailid.text?.isEmpty)! || (hallprice.text?.isEmpty)! || (hallcategory.text?.isEmpty)!
+            || (enterhalladd.text?.isEmpty)! || (halllocation.text?.isEmpty)! || (cod.text?.isEmpty)!
+            || (halldiscription.text?.isEmpty)! || (accountname.text?.isEmpty)! || (accountnumber.text?.isEmpty)!
+            || (ifsccode.text?.isEmpty)! || (bankname.text?.isEmpty)! || (optid.text?.isEmpty)!)
+            
+        {
+            
+            
+            self.showToast(message: "Please Fill data")
+            
+        }
+        else{
+            
         let parameters: Parameters=[
             "hall_name":hallname.text!,
             "manager_name":hallmanagername.text!,
@@ -142,7 +119,7 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
                 }
         }
 
-
+        }
 
 
     }
@@ -150,19 +127,8 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
     
      //choose image from gallery
     @IBAction func uploadbtn(_ sender: Any) {
-   // }
-    
 
-    
-   // @IBAction func uploadbtn(_ sender: Any) {
-    //}
-
-
-
-   // @IBAction func uploadbtn(_ sender: Any) {
-
-
-        self.showToast(message: "Data Save.")
+        //self.showToast(message: "Data Save.")
 
 
         let image = UIImagePickerController()
@@ -173,7 +139,7 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
         self.present(image ,animated: true)
         {
 
-
+        
         }
 
     }
@@ -208,17 +174,18 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
     @IBAction func uploadButtonTapped(_ sender: Any) {
         
         
-    //}
-    
-   // @IBAction func uploadButtonTapped(_ sender: Any) {
-   // }
+        if (self.addimageview.image == nil){
+            
+            self.showToast(message: "select image from gallery")
+        }
+            
+        else{
+            
+            uploadImage()
+            
+        }
 
-
-
-  //  @IBAction func uploadButtonTapped(_ sender: Any) {
-
-
-         uploadImage()
+      
 
 
     }
@@ -292,9 +259,13 @@ UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource
         
         //hallname.delegate = self
         // hallmanagername.delegate=self
-        let defaultValues = UserDefaults.standard
-        let cod = defaultValues.string(forKey: "cod")
-        print(cod)
+        //let defaultValues = UserDefaults.standard
+        //let cod = defaultValues.string(forKey: "cod")
+        
+        cod.text! = getcod
+        optid.text = getemail
+        
+        //print(cod)
         
         
     }

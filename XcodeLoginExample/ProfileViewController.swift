@@ -10,15 +10,13 @@ import UIKit
 class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate 
  {
     
-    
-
     @IBOutlet weak var textBox: UITextField!
     @IBOutlet weak var dropDown: UIPickerView!
 
     var list = ["Marriage Hall", "PartyHall", "meetinghall","ExhibitionHall","BanquetHall"]
     
-
     @IBAction func addhall(_ sender: Any) {
+        
         
         
     }
@@ -26,9 +24,25 @@ class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerView
     
     @IBAction func addservices(_ sender: Any) {
         
-//        let defaultValues = UserDefaults.standard
-//        let cod = defaultValues.string(forKey: "cod")
-//        print(cod)
+        let defaultValues = UserDefaults.standard
+        let cod = defaultValues.string(forKey: "cod")
+        
+        let emailname = defaultValues.string(forKey: "email")
+        
+        //print("cod " + cod! as Any)
+        //print("hello" + name! as Any)
+        
+        
+        let addservices =  UIStoryboard(name: "Main", bundle: nil)
+        
+        let addser = addservices.instantiateViewController(withIdentifier: "AddServices") as! AddServices
+        
+        addser.getcod = cod!
+        addser.getemail = emailname!
+        
+        
+        
+        self.navigationController?.pushViewController(addser, animated: true)
         
     }
     //label again don't copy instead connect
@@ -56,12 +70,14 @@ class ProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerView
         
         //getting user data from defaults
         let defaultValues = UserDefaults.standard
-        let cod = defaultValues.string(forKey: "cod")
+        //let cod = defaultValues.string(forKey: "cod")
+        
+        
         //print(cod)
         if let name = defaultValues.string(forKey: "email"){
             //setting the name to label 
             //labelUserName.text = name
-            print(name)
+           print(name)
         }else{
             //send back to login view controller
         }

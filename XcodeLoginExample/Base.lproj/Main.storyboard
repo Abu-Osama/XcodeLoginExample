@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9RV-WL-Ujf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9RV-WL-Ujf">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -151,7 +151,6 @@
                                         <state key="normal" title="Add services"/>
                                         <connections>
                                             <action selector="addservices:" destination="Siz-Sl-f10" eventType="touchUpInside" id="Nt9-d1-hvT"/>
-                                            <segue destination="c6E-SN-eFg" kind="show" id="mfQ-mR-qyP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -342,8 +341,8 @@
                                                     <outlet property="delegate" destination="X9k-7d-O7V" id="Lie-tN-Aah"/>
                                                 </connections>
                                             </pickerView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.png" translatesAutoresizingMaskIntoConstraints="NO" id="BI8-Ll-4F6">
-                                                <rect key="frame" x="293" y="1400" width="74" height="44"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="drop.png" translatesAutoresizingMaskIntoConstraints="NO" id="BI8-Ll-4F6">
+                                                <rect key="frame" x="321" y="1400" width="46" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="DPJ-28-idw"/>
                                                     <constraint firstAttribute="width" constant="74" id="vmO-6U-f0o"/>
@@ -424,12 +423,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDo-Vt-UvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541.015625" y="138.28125"/>
+            <point key="canvasLocation" x="2539.6875" y="137.32394366197184"/>
         </scene>
         <!--Add Services-->
         <scene sceneID="v61-Em-yT0">
             <objects>
-                <viewController id="c6E-SN-eFg" customClass="AddServices" customModule="XcodeLoginExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddServices" id="c6E-SN-eFg" customClass="AddServices" customModule="XcodeLoginExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UuU-Jk-FVN"/>
                         <viewControllerLayoutGuide type="bottom" id="6ex-HG-yy4"/>
@@ -599,9 +598,13 @@
                                                     <action selector="uploaddata:" destination="c6E-SN-eFg" eventType="touchUpInside" id="oaq-fT-kZ8"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.png" translatesAutoresizingMaskIntoConstraints="NO" id="CAr-LU-eFi">
+                                                <rect key="frame" x="250" y="1431" width="62" height="46"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="CAr-LU-eFi" firstAttribute="top" secondItem="Lfl-lZ-GMh" secondAttribute="bottom" constant="34" id="3cD-TV-MkV"/>
                                             <constraint firstItem="613-Or-5dn" firstAttribute="leading" secondItem="l3i-wa-w4V" secondAttribute="leading" constant="8" id="443-IW-sKf"/>
                                             <constraint firstAttribute="height" constant="2000" id="4mz-fL-DFU"/>
                                             <constraint firstAttribute="bottom" secondItem="p1Q-HQ-rNg" secondAttribute="bottom" constant="280" id="5s2-kf-VhT"/>
@@ -610,8 +613,10 @@
                                             <constraint firstAttribute="trailing" secondItem="p1Q-HQ-rNg" secondAttribute="trailing" constant="8" id="FQb-8F-92E"/>
                                             <constraint firstAttribute="bottom" secondItem="613-Or-5dn" secondAttribute="bottom" constant="523" id="HSU-zd-O6A"/>
                                             <constraint firstItem="613-Or-5dn" firstAttribute="top" secondItem="Lfl-lZ-GMh" secondAttribute="bottom" constant="30" id="HyX-vM-RLh"/>
+                                            <constraint firstItem="CAr-LU-eFi" firstAttribute="leading" secondItem="l3i-wa-w4V" secondAttribute="leading" constant="250" id="IIH-jv-JnW"/>
                                             <constraint firstAttribute="trailing" secondItem="Lfl-lZ-GMh" secondAttribute="trailing" constant="8" id="J1C-RN-aoj"/>
                                             <constraint firstItem="BQl-Fo-ESs" firstAttribute="leading" secondItem="l3i-wa-w4V" secondAttribute="leading" id="Vc1-vd-4LQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="CAr-LU-eFi" secondAttribute="trailing" constant="8" id="ZI8-Eh-jtP"/>
                                             <constraint firstAttribute="bottom" secondItem="C10-Lv-yl3" secondAttribute="bottom" constant="1545" id="bh5-lK-M7C"/>
                                             <constraint firstAttribute="trailing" secondItem="613-Or-5dn" secondAttribute="trailing" constant="8" id="ddj-37-FKL"/>
                                             <constraint firstItem="p1Q-HQ-rNg" firstAttribute="leading" secondItem="l3i-wa-w4V" secondAttribute="leading" constant="8" id="dl8-c0-bOG"/>
@@ -621,6 +626,7 @@
                                             <constraint firstAttribute="trailing" secondItem="BQl-Fo-ESs" secondAttribute="trailing" id="rBY-29-oUI"/>
                                             <constraint firstItem="p1Q-HQ-rNg" firstAttribute="top" secondItem="JjX-g7-4OV" secondAttribute="bottom" constant="22" id="shT-sS-8xK"/>
                                             <constraint firstAttribute="bottom" secondItem="BQl-Fo-ESs" secondAttribute="bottom" constant="1399" id="xsQ-98-DKA"/>
+                                            <constraint firstItem="p1Q-HQ-rNg" firstAttribute="top" secondItem="CAr-LU-eFi" secondAttribute="bottom" constant="192" id="yD2-PK-81I"/>
                                             <constraint firstItem="C10-Lv-yl3" firstAttribute="top" secondItem="l3i-wa-w4V" secondAttribute="top" id="yG4-7Y-emd"/>
                                             <constraint firstItem="BQl-Fo-ESs" firstAttribute="top" secondItem="C10-Lv-yl3" secondAttribute="bottom" constant="96" id="ypA-MB-IbR"/>
                                         </constraints>
